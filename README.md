@@ -82,4 +82,6 @@ User clicks the link → resets password using the token.
 
  Add frontend integration
 
+---
+
 

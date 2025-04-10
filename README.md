@@ -20,7 +20,6 @@ This project is a **Django REST Framework (DRF)** based user authentication syst
 
 ## 📂 Project Structure
 
-plaintext
 .
 ├── account/
 │   ├── models.py            # Custom User model
@@ -34,17 +33,34 @@ plaintext
 ├── manage.py
 └── README.md
 
+
 ⚙️ Setup Instructions
 1. Clone the Repository
    git clone https://github.com/yourusername/django-auth-api.git
+   cd django-auth-api
+
 2. Create and Activate Virtual Environment
   python -m venv venv
-  source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate          # For Linux/macOS
+# OR
+venv\Scripts\activate             # For Windows
+
 3.Install Dependencies
    pip install -r requirements.txt
+   
 4. Apply Migrations
    python manage.py makemigrations
    python manage.py migrate
+
+
+📬 Password Reset Flow
+User submits their email.
+
+System generates a unique token + UID.
+
+Sends a secure password reset link via email.
+
+User clicks the link → resets password using the token.
 
 📫 API Endpoints
 | Method | Endpoint                                        | Description                          |
@@ -55,5 +71,15 @@ plaintext
 | POST   | `/api/user/change-password/`                    | Change password (JWT protected)      |
 | POST   | `/api/user/send-reset-password-email/`          | Send password reset email            |
 | POST   | `/api/user/reset-password/<uidb64>/<token>/`    | Reset password using token           |
+
+
+📌 Todo
+ Add Swagger or ReDoc API documentation
+
+ Add unit tests
+
+ Dockerize the project
+
+ Add frontend integration
 
 
